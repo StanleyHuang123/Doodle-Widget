@@ -5,5 +5,5 @@
 -If you draw new lines after moving tick, the rest of lines and rest part of that line will be deleted, and new lines will be showing in the drawing.
 -Clicking "Start" button would move the tick to the start of slider and no lines showing in drawing.
 -Click "End" button would move the tick to the end of slider and all lines would be showing in drawing.
--Implementing by MVC. DoodleModel and all views are put in separate folders. Model store data, such as data structure for lines. The interactions between model and views are performed by functions. Views have no rights to modify the data in model directly. 
+-Implementing by MVC. DoodleModel and all views are put in separate folders. Model stores data, such as data structure for lines. The interactions between model and views are performed by functions. Views have no rights to modify the data in model directly. 
 -No File and View functionalities.
