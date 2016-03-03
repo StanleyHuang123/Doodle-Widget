@@ -168,7 +168,7 @@ public class DoodleModel extends Object{
 	}
 	public void addLine(){
 		MyLine myLine = new MyLine(this.getStroke(), this.getColor()); 
-		//System.out.println("stroke is " + this.getStroke());
+
 		total_line.add(myLine);
 		this.updateAllViews();
 	}
@@ -183,7 +183,7 @@ public class DoodleModel extends Object{
 		if(n > numLines() * tickGap()){
 			l--;
 		}
-		//System.out.println("l is " + l);
+
 		int r = n % tickGap();
 		int tmp = l;
 		tmp++;
@@ -191,16 +191,15 @@ public class DoodleModel extends Object{
 		int size = total_line.get(l).getLineSize();
 		double tmp_size = (double)size * t;
 		int tt = (int)tmp_size;
-		//System.out.println("tt is " + tt);
-		//System.out.println("First the size of line " + l + " is " + total_line.get(l).getLineSize());
+	
 		for(int i = total_line.get(l).getLineSize() - 1; i > tt;i--){
 			total_line.get(l).line.remove(i);			
 		}
-		//System.out.println("the size of line " + l + " is " + total_line.get(l).getLineSize());
+
 		for(int j = total_line.size() - 1; j >= tmp; j--){
 			total_line.remove(j);
 		}
-		//double t = (double)n / double(tickGap());
+		
 	}
 
 
@@ -208,7 +207,7 @@ public class DoodleModel extends Object{
 
 
 
-	//public int slider_line_triggered(int val){}
+
 	public int double_int(double b){
 		int val = (int)b;
 		
@@ -221,9 +220,7 @@ public class DoodleModel extends Object{
 		double tmp = (double)value / (double)tickGap();
 		int size = total_line.get(n).getLineSize();
 		double tmp_size = (double)size * tmp;
-		//System.out.println("n and value are " + n + " and " + value);
-		//System.out.println("here tmp and size are " + tmp + " and " + size);
-		//System.out.println("tmp_size is " + tmp_size);
+		
 		return tmp_size;
 	}
 	public void over_paint(Graphics g){
@@ -231,19 +228,19 @@ public class DoodleModel extends Object{
 		int tmp_size;
 		if(getSliderTrigger()){
 			if(getlastLine()){
-				//System.out.println("enter11111");
+		
 				tmp_size = getLineTriggered();
 			}
 			else{
-				//System.out.println("enter222222");
+			
 				tmp_size = getLineTriggered() + 1;
 			}
 		}
 		else{
-			//System.out.println("enter333333");
+	
 			tmp_size = total_line.size();
 		}
-		//System.out.println("tmp_size is " + tmp_size);
+
 
 		if(!getSliderTrigger()){
 			for(int i = 0; i < total_line.size(); i++){
@@ -260,31 +257,22 @@ public class DoodleModel extends Object{
 		for(int i = 0; i < tmp_size; i++){
 			GeneralPath polyline = new GeneralPath(GeneralPath.WIND_EVEN_ODD, total_line.get(i).getLineSize());
 			polyline.moveTo(total_line.get(i).getPoint(0).p.x, total_line.get(i).getPoint(0).p.y);
-			//System.out.println("Slider Trigger is " + getSliderTrigger());
+
 			if(!getSliderTrigger()){
 				for(int j = 0; j < total_line.get(i).getLineSize(); j++){
 					polyline.lineTo(total_line.get(i).getPoint(j).p.x, total_line.get(i).getPoint(j).p.y);
 				}
-				//g2.setColor(total_line.get(i).getLineColor());
-				//g2.draw(polyline);
+			
 			}
 			else{
-				// int tt = tmp_size - 1;
-				// if(i != tt){
-				// 	for(int j = 0; j < total_line.get(i).getLineSize(); j++){
-				// 		polyline.lineTo(total_line.get(i).getPoint(j).p.x, total_line.get(i).getPoint(j).p.y);
-				// 	}
-				// }
-				// else{
-				//System.out.println("getlastLine() is " + getlastLine());
+		
 					if(!getlastLine()){
 						double sdd = line_point_triggered(i, getPointTriggered());
 						int sd = double_int(sdd);
-					//System.out.println("sdd is " + sdd);
-					//System.out.println("sd is " + sd);
+				
 						if(i == tmp_size - 1){
 							for(int j = 0; j < sd; j++){
-					//		System.out.println("current i is " + i);
+				
 								polyline.lineTo(total_line.get(i).getPoint(j).p.x, total_line.get(i).getPoint(j).p.y);
 							}
 						}
@@ -299,17 +287,7 @@ public class DoodleModel extends Object{
 							polyline.lineTo(total_line.get(i).getPoint(j).p.x, total_line.get(i).getPoint(j).p.y);
 						}
 					}
-					// else{
-					// 	double sdd = line_point_triggered(i, getPointTriggered());
-					// 	int sd = double_int(sdd);
-					// 	sd++;
-					// System.out.println("sdd at not last line is " + sdd);
-					// System.out.println("sd at not last line is " + sd);
-					// 	for(int j = 0; j < sd; j++){
-					// 		polyline.lineTo(total_line.get(i).getPoint(j).p.x, total_line.get(i).getPoint(j).p.y);
-					// 	}
-					// }
-				//}
+				
 			}
 			g2.setStroke(new BasicStroke(total_line.get(i).getLineStroke()));
 			g2.setColor(total_line.get(i).getLineColor());
@@ -320,7 +298,7 @@ public class DoodleModel extends Object{
 		return total_line.size();
 	}
 	public int tickGap(){
-		//return 100/total_line.size();
+		
 		if(total_line.size() == 0){
 			return 1000;
 		}
@@ -331,17 +309,7 @@ public class DoodleModel extends Object{
 	public double playimage(int val){
 		//int pos = getSliderPos();
 		int l = val / tickGap();
-		//int p = val % tickGap();
-		// double sdd = line_point_triggered(l, p);
-		// int sd = double_int(sdd);
-		// while(sd < total_line.get(l).getLineSize()){
-		// 	if(total_line.get(l).getPoint(sd).flag == false){
-		// 		sd++;
-		// 	}
-		// 	else{
-		// 		break;
-		// 	}
-		// }
+		
 		double gg = 0;
 		if(val < numLines() * tickGap()){
 			int num_f = total_line.get(l).get_bp();

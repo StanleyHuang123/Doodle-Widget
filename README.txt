@@ -1,4 +1,4 @@
--Apply MVC structure and java swing widgets
+-Apply MVC structure, java swing widgets and dynamic layout
 -There are six colours and 2 strokes to be chosen
 -You can choose your favourite colour from colour chooser, by clicking "More Colour" button. When selecting customized colour, just close the created colour chooser frame. The new colour for new lines has been chosen.
 -Clicking "Play" button would play the animation from any position from slider. This function records and demonstrates the accurate representation of time of each lines. You can try short and long lines to observe the representation of time.

@@ -28,28 +28,7 @@ public class StrokeView extends JPanel{
 
 	private void layoutView(){
 		JPanel jp = new JPanel(new GridLayout(2, 1));
-		// JPanel jf = new JPanel();
-		// jf.setSize(40, 40);
-		// Image img_f = ImageIO.read(getClass().getResource("strokeThin.png"));
-		// jf.add(img_f);
-		// jf.addActionListener(new ActionListener(){
-		// 	public void actionPerformed(ActionEvent evt){
-		// 		model.setStroke(32);
-		// 	}
-		// });
-
-		// JPanel js = new JPanel();
-		// js.setSize(40, 40);
-		// Image img_s = ImageIO.read(getClass().getResource("strokeThick.png"));
-		// js.add(img_s);
-		// js.addActionListener(new ActionListener(){
-		// 	public void actionPerformed(ActionEvent evt){
-		// 		model.setStroke(64);
-		// 	}
-		// });
-
-		// jp.add(jf);
-		// jp.add(js);
+	
 		try{
 		Image img_f = ImageIO.read(getClass().getResource("strokeThin.png"));
 		Image img_fs = img_f.getScaledInstance(80, 40, java.awt.Image.SCALE_SMOOTH);
@@ -71,7 +50,7 @@ public class StrokeView extends JPanel{
 		});
 		rbGroup.add(rb_f);
 		rbGroup.add(rb_s);
-		//jp.add(rbGroup);
+
 		jp.add(rb_f);
 		jp.add(rb_s);
 		this.add(jp);

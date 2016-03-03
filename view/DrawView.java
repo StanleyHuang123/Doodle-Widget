@@ -21,16 +21,12 @@ public class DrawView extends JPanel{
 		this.model = aModel;
 		this.layoutView();
 		this.addDraw();
-		//this.setPreferredSize(new Dimension(500, 400));
-		//this.setVisible(true);
-		//this.setBackground(Color.YELLOW);
-		//this.setBorder(
-          //  BorderFactory.createLineBorder(Color.black));
+
 		
 		
 		this.model.addView(new IView(){
 			public void updateView(){
-				//Color_d = model.getColor();
+		
 				repaint();
 			}
 		});
@@ -38,49 +34,31 @@ public class DrawView extends JPanel{
 
 	private void layoutView(){
 
-		//JPanel canvas = new JPanel();
-		//this.setPreferredSize(new Dimension(500, 400));
-		//this.setLayout(new GridLayout(1, 0));
+
 
 		this.setVisible(true);
 		
 		this.setBorder(
             BorderFactory.createLineBorder(Color.black));
-		//this.setBackground(Color.YELLOW);
-		// this.addMouseMotionListener(new MouseAdapter(){
-		// 	public void mouseMoved(MouseEvent e){
-		// 		mouseX = e.getX();
-		// 		mouseY = e.getY();
-		// 		repaint();
-		// 	}
-		// });
-		//this.add(canvas);
+
 		
 	}
 
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
-		//System.out.println("color is " + Color_d);
-		//g2.drawLine(mouseX, mouseY, mouseX, mouseY);
-		//String label = "Mouse at (" + mouseX + ", " + mouseY + ")";
-		//System.out.println(label);
-        
-        //System.out.println("here");
-	   // g2.drawString(label, 140, 150);
-	    //System.out.println("there");
+	
 	    model.over_paint(g);
 	}
 
 	private void addDraw(){
 		this.addMouseListener(new MouseAdapter(){
     		public void mousePressed(MouseEvent e){
-                //System.out.println("max is " + model.tickGap() + " and " + model.numLines() * model.tickGap());
+             
                 if(model.getSliderPos() < (model.numLines() * model.tickGap())){
                     int tmp = model.getSliderPos();
                     model.setSliderPos(1000);
                     model.remove(tmp);
-                    //System.out.println("tmp is " + tmp);
-                    //model.setSliderPos(1000);
+                 
                 }
 
     			model.setSliderTrigger(false);
@@ -95,12 +73,7 @@ public class DrawView extends JPanel{
     				tmp = false;
     			}
     			model.addLinePoint(p, tmp);
-    			// ArrayList<Point> ps = new ArrayList<Point>();
-    			// ps.add(p);
-    			// lines.add(ps);
-    			// System.out.println("now the size is " + lines.size());
-
-    			// painted = true;
+    			
     			 dragged = true;
 
 

@@ -17,25 +17,21 @@ import javax.swing.JPanel;
 
 public class ColorChooseView extends JPanel{
 	private DoodleModel model;
-	//private JColorChooser cl_chooser = new JColorChooser();
+
 	public ColorChooseView(DoodleModel aModel){
 		super();
 		this.model = aModel;
 		this.layoutView();
 		this.model.addView(new IView(){
 			public void updateView(){
-				//System.out.println("oh ColorChooser changed");
+			
 				repaint();
 			}
 		});
 	}
 
 	private void layoutView(){
-		//JPanel jp = new JPanel();
-		//jp.setPreferredSize(new Dimension(500, 400));
-		//cl_chooser.getSelectionModel().addChangeListener(new cl_chooseListener());
-		//jp.add(cl_chooser);
-		//this.add(jp);
+		
 		JButton jb_ch = new JButton("More Color");
 		jb_ch.addActionListener(new ColorChooseAction());
 		this.add(jb_ch);
@@ -48,10 +44,10 @@ public class ColorChooseView extends JPanel{
 			jf.setSize(600, 500);
 			JPanel jp = new JPanel();
 			jf.setContentPane(jp);
-			//JColorChooser cl_chooser = new JColorChooser();
+
 			cl_chooser.getSelectionModel().addChangeListener(new cl_chooseListener());
 			jp.add(cl_chooser);
-			//jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
 			jf.setVisible(true);
 		}
 		private class cl_chooseListener implements ChangeListener{
