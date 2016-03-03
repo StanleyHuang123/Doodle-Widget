@@ -1,8 +1,9 @@
--There are six colors and 2 strokes to be chosen
--You can choose your favourive color from color chooser, by clicking "More Color" button. When selecting customized color, just close the created color chooser frame. The new color for new lines has been choosen.
--Clicking "Play" button would play the animation from any position from slider. This function record and demonstrate the accurate reprsentation of time of each lines. You can try short and long lines to observe the representation of time.
+-Apply MVC structure and java swing widgets
+-There are six colours and 2 strokes to be chosen
+-You can choose your favourite colour from colour chooser, by clicking "More Colour" button. When selecting customized colour, just close the created colour chooser frame. The new colour for new lines has been chosen.
+-Clicking "Play" button would play the animation from any position from slider. This function records and demonstrates the accurate representation of time of each lines. You can try short and long lines to observe the representation of time.
 -If you draw new lines after moving tick, the rest of lines and rest part of that line will be deleted, and new lines will be showing in the drawing.
 -Clicking "Start" button would move the tick to the start of slider and no lines showing in drawing.
 -Click "End" button would move the tick to the end of slider and all lines would be showing in drawing.
 -Implementing by MVC. DoodleModel and all views are put in separate folders. Model store data, such as data structure for lines. The interactions between model and views are performed by functions. Views have no rights to modify the data in model directly. 
--Sorry no File and View functionalities.
+-No File and View functionalities.
